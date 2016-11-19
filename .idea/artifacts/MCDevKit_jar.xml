@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MCDevKit:jar">
+    <output-path>$USER_HOME$/mctest/plugins</output-path>
+    <root id="archive" name="MCDevKit.jar">
+      <element id="module-output" name="MCDevKit" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.2" />
+    </root>
+  </artifact>
+</component>
