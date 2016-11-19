@@ -1,6 +1,6 @@
 package com.jasonbratt.tools;
 
-import com.jasonbratt.DevKit;
+import com.jasonbratt.DevKitBungee;
 import com.jasonbratt.players.WatcherPlayer;
 import net.md_5.bungee.api.Callback;
 import net.md_5.bungee.api.config.ServerInfo;
@@ -18,9 +18,9 @@ import java.util.concurrent.TimeUnit;
  * Created by jasonbratt on 11/18/16.
  */
 public class Utils {
-    private DevKit plugin;
+    private DevKitBungee plugin;
 
-    public Utils(DevKit plugin) {
+    public Utils(DevKitBungee plugin) {
         this.plugin = plugin;
     }
 

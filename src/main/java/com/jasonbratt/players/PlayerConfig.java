@@ -3,8 +3,7 @@ package com.jasonbratt.players;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.jasonbratt.DevKit;
-import com.jasonbratt.players.WatcherPlayer;
+import com.jasonbratt.DevKitBungee;
 
 import java.io.File;
 import java.io.FileReader;
@@ -20,9 +19,9 @@ public class PlayerConfig {
     private File file = new File("plugins/DevKit/", "players.json");
     private HashSet<WatcherPlayer> players;
     private boolean loaded = false;
-    private DevKit plugin;
+    private DevKitBungee plugin;
 
-    public PlayerConfig (DevKit plugin) {
+    public PlayerConfig (DevKitBungee plugin) {
         this.plugin = plugin;
     }
 

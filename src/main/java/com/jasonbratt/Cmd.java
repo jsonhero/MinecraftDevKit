@@ -16,9 +16,9 @@ import net.md_5.bungee.api.plugin.Command;
 
 
 public class Cmd extends Command {
-    private DevKit plugin;
+    private DevKitBungee plugin;
 
-    public Cmd(DevKit plugin) {
+    public Cmd(DevKitBungee plugin) {
         super("devkit");
         this.plugin = plugin;
     }

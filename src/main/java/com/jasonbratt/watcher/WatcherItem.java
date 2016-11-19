@@ -1,7 +1,7 @@
 package com.jasonbratt.watcher;
 
 import com.google.gson.JsonObject;
-import com.jasonbratt.DevKit;
+import com.jasonbratt.DevKitBungee;
 
 /**
  * Created by jasonbratt on 11/15/16.
@@ -18,7 +18,7 @@ public class WatcherItem {
     }
 
     public Integer setBuild() {
-        JsonObject json = DevKit.jr.makeRequest("/job/" + watcherName + "/api/json");
+        JsonObject json = DevKitBungee.jr.makeRequest("/job/" + watcherName + "/api/json");
         if (!json.get("lastSuccessfulBuild").isJsonNull()) {
             Integer newBuild = json.get("lastSuccessfulBuild").getAsJsonObject().get("number").getAsInt();;
             if (lastSuccessfulBuild != newBuild) {

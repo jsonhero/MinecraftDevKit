@@ -3,7 +3,7 @@ package com.jasonbratt.tools;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.jasonbratt.DevKit;
+import com.jasonbratt.DevKitBungee;
 import com.jasonbratt.watcher.WatcherItem;
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 
@@ -17,9 +17,9 @@ import java.nio.charset.Charset;
 public class JenkinsRequest {
     private String baseUrl;
     private String token;
-    private DevKit plugin;
+    private DevKitBungee plugin;
 
-    public JenkinsRequest(String username, String password, String host, String token, DevKit plugin) {
+    public JenkinsRequest(String username, String password, String host, String token, DevKitBungee plugin) {
         this.baseUrl = "http://" + username + ":" + password + "@" + host;
         this.token = "?token=" + token;
         this.plugin = plugin;

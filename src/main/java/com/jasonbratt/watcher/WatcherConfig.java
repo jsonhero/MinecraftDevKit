@@ -3,7 +3,7 @@ package com.jasonbratt.watcher;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.jasonbratt.DevKit;
+import com.jasonbratt.DevKitBungee;
 
 import java.io.*;
 import java.util.HashSet;
@@ -15,9 +15,9 @@ public class WatcherConfig {
     private File file = new File("plugins/DevKit/", "watchers.json");
     private HashSet<WatcherItem> watchers;
     private boolean loaded = false;
-    private DevKit plugin;
+    private DevKitBungee plugin;
 
-    public WatcherConfig (DevKit plugin) {
+    public WatcherConfig (DevKitBungee plugin) {
         this.plugin = plugin;
     }
 
