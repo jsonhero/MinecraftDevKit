@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.jasonbratt.players.PlayerConfig;
+import com.jasonbratt.tools.Chat;
 import com.jasonbratt.tools.JenkinsRequest;
 import com.jasonbratt.tools.Utils;
 import com.jasonbratt.watcher.WatcherConfig;
@@ -67,7 +68,7 @@ public class DevKitBungee extends Plugin {
                 Collection<ProxiedPlayer> players = server.getPlayers();
 
                 for (ProxiedPlayer player : players) {
-                    player.sendMessage(new TextComponent(ChatColor.GOLD + "Transferring to lobby server..."));
+                    player.sendMessage(new TextComponent(Chat.chatServerTransfer(config.lobbyServer)));
                     player.connect(getProxy().getServerInfo(config.lobbyServer));
                 }
 
