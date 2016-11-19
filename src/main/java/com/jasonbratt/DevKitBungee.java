@@ -67,11 +67,6 @@ public class DevKitBungee extends Plugin {
             if (server != null) {
                 Collection<ProxiedPlayer> players = server.getPlayers();
 
-                for (ProxiedPlayer player : players) {
-                    player.sendMessage(new TextComponent(Chat.chatServerTransfer(config.lobbyServer)));
-                    player.connect(getProxy().getServerInfo(config.lobbyServer));
-                }
-
                 ByteArrayOutputStream b = new ByteArrayOutputStream();
                 DataOutputStream out = new DataOutputStream(b);
                 try {
@@ -82,8 +77,13 @@ public class DevKitBungee extends Plugin {
                     e.printStackTrace();
                 }
 
-                utils.reconnectPlayers(server, utils.getConnectedPlayers(playerConfig.getPlayers(), server.getName()));
+                for (ProxiedPlayer player : players) {
+                    player.sendMessage(new TextComponent(Chat.chatServerTransfer(config.lobbyServer)));
+                    player.connect(getProxy().getServerInfo(config.lobbyServer));
+                }
+
                 server.sendData("BungeeCord", b.toByteArray());
+                utils.reconnectPlayers(server, utils.getConnectedPlayers(playerConfig.getPlayers(), server.getName()));
             }
         }
     }
