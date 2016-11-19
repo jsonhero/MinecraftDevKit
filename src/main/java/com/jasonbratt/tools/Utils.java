@@ -70,7 +70,7 @@ public class Utils {
                 public void run() {
                     if (pingServer(server)) {
                         for (ProxiedPlayer player : players) {
-                            player.sendMessage(new TextComponent(ChatColor.DARK_PURPLE + "Transferring to server...."));
+                            player.sendMessage(new TextComponent(ChatColor.GOLD + "Transferring to server " + ChatColor.GREEN + server.getName()));
                             player.connect(server, new Callback<Boolean>() {
                                 @Override
                                 public void done(Boolean aBoolean, Throwable throwable) {

@@ -3,6 +3,7 @@ package com.jasonbratt;
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
 import com.jasonbratt.tools.PluginUpdater;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
@@ -36,6 +37,7 @@ public class DevKit extends JavaPlugin implements PluginMessageListener {
             String url = in.readUTF();
             String jarName = in.readUTF();
             File file = new File("plugins/", jarName);
+            this.getServer().broadcastMessage(ChatColor.BOLD + "" + ChatColor.DARK_AQUA + "[DevKit] Restarting server to update " + jarName + ".");
 
             try {
                 URL fileUrl = new URL(url);
