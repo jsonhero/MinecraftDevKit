@@ -3,6 +3,9 @@ package com.jasonbratt.tools;
 import com.jasonbratt.DevKitBungee;
 import com.jasonbratt.players.WatcherPlayer;
 import net.md_5.bungee.api.Callback;
+import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.config.ServerInfo;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.scheduler.ScheduledTask;
@@ -67,6 +70,7 @@ public class Utils {
                 public void run() {
                     if (pingServer(server)) {
                         for (ProxiedPlayer player : players) {
+                            player.sendMessage(new TextComponent(ChatColor.DARK_PURPLE + "Transferring to server...."));
                             player.connect(server, new Callback<Boolean>() {
                                 @Override
                                 public void done(Boolean aBoolean, Throwable throwable) {

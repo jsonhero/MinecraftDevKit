@@ -8,6 +8,8 @@ import com.jasonbratt.tools.JenkinsRequest;
 import com.jasonbratt.tools.Utils;
 import com.jasonbratt.watcher.WatcherConfig;
 import com.jasonbratt.watcher.WatcherItem;
+import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.config.ServerInfo;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -67,8 +69,8 @@ public class DevKitBungee extends Plugin {
                 waitingPlayers.put(server.getName(), players);
 
                 for (ProxiedPlayer player : players) {
+                    player.sendMessage(new TextComponent(ChatColor.GOLD + "Transferring to lobby server..."));
                     player.connect(getProxy().getServerInfo(config.lobbyServer));
-                    getLogger().info("wee");
                 }
 
                 ByteArrayOutputStream b = new ByteArrayOutputStream();

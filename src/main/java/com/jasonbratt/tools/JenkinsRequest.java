@@ -74,7 +74,7 @@ public class JenkinsRequest {
         if ((ar = jo.get("artifacts").getAsJsonArray()).size() > 0) {
             watcher.setJar(ar.get(0).getAsJsonObject().get("fileName").getAsString());
             String arPath = ar.get(0).getAsJsonObject().get("relativePath").getAsString();
-
+            plugin.watcherConfig.save();
             return this.formUrl("/job/" + watcher.watcherName + "/" + Integer.toString(buildNum) + "/artifact/" + arPath);
         }
 
