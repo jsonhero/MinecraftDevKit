@@ -1,4 +1,6 @@
-* Minecraft Dev Kit
+# Minecraft Dev Kit
+
+![Kit](https://gyazo.com/e8c84909e38263a377b6178698dcdd85.png)
 
 A developer tool kit for increasing efficiency in minecraft plugin development/deployment.
 
