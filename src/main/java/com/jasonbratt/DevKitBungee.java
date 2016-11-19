@@ -24,7 +24,6 @@ public class DevKitBungee extends Plugin {
     public static Config config;
     public static JenkinsRequest jr;
     public WatcherConfig watcherConfig = new WatcherConfig(this);
-    public HashMap<String, Collection<ProxiedPlayer>> waitingPlayers = new HashMap<>();
     public Utils utils = new Utils(this);
     public PlayerConfig playerConfig = new PlayerConfig(this);
 
@@ -66,7 +65,6 @@ public class DevKitBungee extends Plugin {
 
             if (server != null) {
                 Collection<ProxiedPlayer> players = server.getPlayers();
-                waitingPlayers.put(server.getName(), players);
 
                 for (ProxiedPlayer player : players) {
                     player.sendMessage(new TextComponent(ChatColor.GOLD + "Transferring to lobby server..."));
