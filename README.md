@@ -1,4 +1,4 @@
-** Minecraft Dev Kit
+* Minecraft Dev Kit
 
 A developer tool kit for increasing efficiency in minecraft plugin development/deployment.
 
