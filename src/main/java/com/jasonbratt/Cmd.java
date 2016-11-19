@@ -23,17 +23,21 @@ public class Cmd extends Command {
         this.plugin = plugin;
     }
 
+    public void helpMenu(CommandSender sender) {
+        sender.sendMessage(new TextComponent(ChatColor.GOLD + "-----(=) DevKit (=)-----"));
+        sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit watchlist - List possible watchers."));
+        sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit addwatcher <watcher> <server> - Add watcher to a server."));
+        sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit removewatcher <watcher> <server> - Remove watcher from a server."));
+        sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit watchers - Show all registered watchers."));
+        sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit listen <server> - Listen to a server for watcher updates."));
+        sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit unlisten <server> - Stop listening to a sever."));
+        sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit me - Show servers you're listening to."));
+    }
+
     @Override
     public void execute(CommandSender sender, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage(new TextComponent(ChatColor.GOLD + "-----(=) DevKit (=)-----"));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit watchlist - List possible watchers."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit addwatcher <watcher> <server> - Add watcher to a server."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit removewatcher <watcher> <server> - Remove watcher from a server."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit watchers - Show all registered watchers."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit listen <server> - Listen to a server for watcher updates."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit unlisten <server> - Stop listening to a sever."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit me - Show servers you're listening to."));
+            this.helpMenu(sender);
             return;
         }
 
@@ -94,14 +98,7 @@ public class Cmd extends Command {
             }
 
         } else {
-            sender.sendMessage(new TextComponent(ChatColor.GOLD + "-----(=) DevKit (=)-----"));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit watchlist - List possible watchers."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit addwatcher <watcher> <server> - Add watcher to a server."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit removewatcher <watcher> <server> - Remove watcher from a server."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit watchers - Show all registered watchers."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit listen <server> - Listen to a server for watcher updates."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit unlisten <server> - Stop listening to a sever."));
-            sender.sendMessage(new TextComponent(ChatColor.AQUA + "/devkit me - Show servers you're listening to."));
+            this.helpMenu(sender);
         }
 
     }
