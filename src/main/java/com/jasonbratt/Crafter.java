@@ -20,7 +20,6 @@ public class Crafter extends JavaPlugin implements PluginMessageListener {
     public void onEnable() {
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
         this.getServer().getMessenger().registerIncomingPluginChannel(this, "BungeeCord", this);
-        getLogger().info("Yiippity yawdip dog");
     }
 
     @Override
@@ -36,8 +35,6 @@ public class Crafter extends JavaPlugin implements PluginMessageListener {
         if (subchannel.equals("DevKitChannel")) {
             String url = in.readUTF();
             String jarName = in.readUTF();
-            this.getServer().broadcastMessage("blah " + url);
-            this.getServer().broadcastMessage("jar  " + jarName);
             File file = new File("plugins/", jarName);
 
             try {

@@ -65,9 +65,7 @@ public class Utils {
 
                 @Override
                 public void run() {
-                    plugin.getLogger().info("Trying to connect");
                     if (pingServer(server)) {
-                        plugin.getLogger().info("Server connected " + server.getName());
                         for (ProxiedPlayer player : players) {
                             player.connect(server, new Callback<Boolean>() {
                                 @Override

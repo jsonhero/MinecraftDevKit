@@ -59,7 +59,6 @@ public class JenkinsRequest {
     public String getArtifactUrl(WatcherItem watcher, int buildNum) {
         URL url = null;
         try {
-            plugin.getLogger().info("#2: " + this.formUrl("/job/" + watcher.watcherName + "/" + Integer.toString(buildNum) + "/api/json"));
             url = new URL(this.formUrl("/job/" + watcher.watcherName + "/" + Integer.toString(buildNum) + "/api/json"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
